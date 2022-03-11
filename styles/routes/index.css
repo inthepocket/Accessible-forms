@@ -1,0 +1,15 @@
+h1 {
+  margin: var(--spacing-3xl);
+}
+
+@media screen and (min-width: 640px) {
+  .name,
+  .region {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .name .form-group {
+    flex: 1;
+  }
+}

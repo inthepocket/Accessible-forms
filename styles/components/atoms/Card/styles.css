@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-3xl);
+  background-color: var(--neutral-000);
+  box-shadow: var(--shadow-1);
+  border-radius: var(--radius-sm);
+  flex: 1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+
+.card-header {
+  width: 100%;
+  margin-bottom: var(--spacing-2xl);
+}
+
+legend.card-header {
+  float: left;
+}

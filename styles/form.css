@@ -1,0 +1,75 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group > label {
+  margin-bottom: var(--spacing-xs);
+}
+
+.form-group > span:not(:empty) {
+  font-size: 0.875rem;
+  color: var(--orange-300);
+  margin-top: var(--spacing-2xs);
+}
+
+input {
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: var(--neutral-700);
+  opacity: 1;
+}
+
+/* By default we style "text" input as a text field */
+input:not([type='radio']) {
+  width: 100%;
+  padding: calc(var(--spacing-md) * 1.125) var(--spacing-md);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-sm);
+}
+
+input:focus,
+.select select:focus {
+  outline: none;
+  border-color: var(--primary-500);
+}
+
+input:disabled {
+  background-color: var(--neutral-300);
+  border-color: var(--neutral-600);
+}
+
+.select-wrapper {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.select {
+  position: relative;
+  flex: 1;
+}
+
+.select select {
+  width: 100%;
+  background-color: var(--neutral-000);
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  padding: calc(var(--spacing-md) * 1.125) calc(var(--spacing-md) + 24px)
+    calc(var(--spacing-md) * 1.125) var(--spacing-md);
+  appearance: none;
+}
+
+.select svg {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: -1;
+}
+
+button[type='submit'] {
+  align-self: flex-end;
+}
