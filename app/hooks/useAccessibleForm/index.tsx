@@ -14,6 +14,7 @@ type Params = {
 
 const useAccessibleForm = ({ hasErrors, errors, showToast }: Params) => {
   const formRef = useRef<HTMLFormElement>(null);
+  const formName = formRef.current?.getAttribute('aria-label')?.toLowerCase() || 'form';
   const isSubmitting = useTransition().state === 'submitting';
 
   useEffect(() => {
@@ -28,12 +29,12 @@ const useAccessibleForm = ({ hasErrors, errors, showToast }: Params) => {
       const firstInvalidFormField = getFirstInvalidFormField(formRef, errors!);
       firstInvalidFormField?.focus();
 
-      const message = `The personal information form contains the following invalid form input fields: ${invalidFormFieldNames}. Currently focusing: ${firstInvalidFormFieldName}`;
+      const message = `The ${formName} contains the following invalid form input fields: ${invalidFormFieldNames}. Currently focusing: ${firstInvalidFormFieldName}`;
       return showToast({ message, isError: true });
     }
 
-    showToast({ message: 'The personal information form was successfully submitted.' });
-  }, [isSubmitting, hasErrors, errors, showToast]);
+    showToast({ message: `The ${formName} was successfully submitted.` });
+  }, [isSubmitting, hasErrors, errors, showToast, formName]);
 
   return { formRef };
 };
